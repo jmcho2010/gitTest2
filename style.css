@@ -1,11 +1,13 @@
 @import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
 
 *{
-  box-sizing: border-box;  
+    box-sizing: border-box;
+    
 }
 
 body{
     margin: 0;
+    /* background-color: black; */
 }
 
 .toggle{
@@ -15,25 +17,19 @@ body{
     cursor: pointer;
     z-index: 100;
 }
+
+
 .toggle i{
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    font-size: 30px;
+    font-size: 35px;
     line-height: 40px;
     background-color: black;
     transition: 0.5s;
     color: white;
     text-align: center;
 }
-
-.toggle.active i{
-    background-color: yellowgreen;
-    transform: rotate(315deg);
-}
-
-
-
 
 .overlay{
     position: fixed;
@@ -47,6 +43,7 @@ body{
     opacity: 0;
     z-index: 10;
 }
+
 .overlay.active{
     transform: scale(130);
     opacity: 1;
@@ -56,15 +53,16 @@ body{
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
     list-style: none;
     margin: 0;
-    padding: 0; 
-    opacity: 0;
+    padding: 0;
     pointer-events: none;
+    opacity: 0;
     transition: 0.5s;
     z-index: 100;
 }
+
 .gnb.active{
     opacity: 1;
     pointer-events: all;
@@ -78,7 +76,12 @@ body{
     position: relative;
 }
 
-.gnb a:after{
+.toggle.active i{
+    background-color: yellowgreen;
+    transform: rotate(315deg);
+}
+
+.gnb a::after{
     content: '';
     position: absolute;
     height: 20px;
@@ -87,8 +90,35 @@ body{
     left: 0;
     bottom: 10px;
     transition: 0.5s;
-    z-index: -1; 
+    z-index: -1;
 }
-.gnb a:hover:after{
+
+.gnb a:hover::after{
     width: 100%;
+}
+
+.container{
+    text-align: center;
+    width: 1200px;
+    position: relative;
+
+}
+
+h1{
+    font-size: 50px;
+    border-bottom: 5px solid red;
+    display: inline-block;
+}
+
+#feature2{
+    height: 800px;
+    position: relative;
+    left: 25%;
+    top: 100px;
+}
+#feature3{
+    height: 800px;
+    position: relative;
+    left: 25%;
+    top: 100px;
 }
